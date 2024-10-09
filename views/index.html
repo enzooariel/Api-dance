@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance API Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Dance API Documentation</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#auth">Authentication</a></li>
+                    <li><a href="#dance-styles">Dance Styles</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <section id="auth" class="endpoint">
+                <h2>Authentication</h2>
+                <h3>Register User</h3>
+                <pre>
+URL: /api/auth/register
+Method: POST
+Headers: None
+Body:
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+                </pre>
+                <h3>Login User</h3>
+                <pre>
+URL: /api/auth/login
+Method: POST
+Headers: None
+Body:
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+                </pre>
+            </section>
+
+            <section id="dance-styles" class="endpoint">
+                <h2>Dance Styles</h2>
+                <h3>Get All Dance Styles</h3>
+                <pre>
+URL: /api/dance-styles
+Method: GET
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+                </pre>
+                <h3>Create New Dance Style</h3>
+                <pre>
+URL: /api/dance-styles
+Method: POST
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+Body:
+{
+  "name": "Salsa",
+  "origin": "Cuba",
+  "description": "A popular dance style originating from Latin America."
+}
+                </pre>
+                <h3>Update Dance Style</h3>
+                <pre>
+URL: /api/dance-styles/&lt;id_of_dance_style&gt;
+Method: PUT
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+Body:
+{
+  "name": "Salsa Updated",
+  "origin": "Cuba",
+  "description": "An updated description for Salsa."
+}
+                </pre>
+                <h3>Delete Dance Style</h3>
+                <pre>
+URL: /api/dance-styles/&lt;id_of_dance_style&gt;
+Method: DELETE
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+                </pre>
+            </section>
+
+            <section id="locations" class="endpoint">
+                <h2>Locations</h2>
+                <h3>Get All Locations</h3>
+                <pre>
+URL: /api/locations
+Method: GET
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+                </pre>
+                <h3>Create New Location</h3>
+                <pre>
+URL: /api/locations
+Method: POST
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+Body:
+{
+  "name": "Dance Studio",
+  "address": "123 Main St",
+  "city": "Havana",
+  "country": "Cuba"
+}
+                </pre>
+                <h3>Update Location</h3>
+                <pre>
+URL: /api/locations/&lt;id_of_location&gt;
+Method: PUT
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+Body:
+{
+  "name": "Dance Studio Updated",
+  "address": "123 Main St",
+  "city": "Havana",
+  "country": "Cuba"
+}
+                </pre>
+                <h3>Delete Location</h3>
+                <pre>
+URL: /api/locations/&lt;id_of_location&gt;
+Method: DELETE
+Headers:
+  Authorization: Bearer &lt;your_jwt_token&gt;
+                </pre>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
